@@ -162,21 +162,21 @@
   win_chocolatey_feature:
     name: allowGlobalConfirmation
 
-- name: Put Doublecmd link to desktop
-  win_copy:
-    src: '%APPDATA%\Microsoft\Windows\Start Menu\Programs\Double Commander\Double Commander.lnk'
-    dest: '%PUBLIC%\Desktop\'
-    remote_src: true
+# - name: Put Doublecmd link to desktop
+#   win_copy:
+#     src: '%APPDATA%\Microsoft\Windows\Start Menu\Programs\Double Commander\Double Commander.lnk'
+#     dest: '%PUBLIC%\Desktop\'
+#     remote_src: true
 
-- name: Create config directory for Doublecmd
-  win_file:
-    path: '%APPDATA%\doublecmd'
-    state: directory
+# - name: Create config directory for Doublecmd
+#   win_file:
+#     path: '%APPDATA%\doublecmd'
+#     state: directory
 
-- name: Upload Dolublecmd configuration file
-  win_copy:
-    src: win/doublecmd.xml
-    dest: '%APPDATA%\doublecmd\doublecmd.xml'
+# - name: Upload Dolublecmd configuration file
+#   win_copy:
+#     src: win/doublecmd.xml
+#     dest: '%APPDATA%\doublecmd\doublecmd.xml'
 
 - name: Add choco upgrade scheduled task
   win_scheduled_task:
@@ -205,18 +205,18 @@
 - name: Install windows updates
   win_updates:
     category_names:
-      - Application
+      # - Application
       - Connectors
-      - CriticalUpdates
-      - DefinitionUpdates
-      - DeveloperKits
-      - FeaturePacks
-      - Guidance
-      - SecurityUpdates
-      - ServicePacks
-      - Tools
-      - UpdateRollups
-      - Updates
+      # - CriticalUpdates
+      # - DefinitionUpdates
+      # - DeveloperKits
+      # - FeaturePacks
+      # - Guidance
+      # - SecurityUpdates
+      # - ServicePacks
+      # - Tools
+      # - UpdateRollups
+      # - Updates
   register: windows_updates
 
 - name: Windows reboot
